@@ -67,15 +67,15 @@
     <!-- Table Section -->
     <div class="px-4 md:px-6 rounded-lg bg-slate-200">
       <!-- Fixed height container for table -->
-      <div class="h-[calc(100vh-300px)] flex flex-col">
+      <div class="h-[calc(100vh-200px)] flex flex-col">
         <!-- Table Container with scrolling -->
         <div class="flex-1 overflow-y-auto">
           <table class="table w-full">
             <thead>
               <tr>
-                <th class="text-left w-[40%]">Title</th>
+                <th class="text-left w-[50%]">Title</th>
                 <th class="text-left w-[30%]">Date</th>
-                <th class="text-left w-[30%] pr-4">Actions</th>
+                <th class="text-right">Actions</th>
               </tr>
             </thead>
             <tbody>
