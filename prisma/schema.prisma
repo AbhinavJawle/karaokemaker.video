@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Auth Users (Supabase Auth)
+model User {
+  id            String           @id @db.Uuid
+  profile       Profile?
+  stripeCustomer StripeCustomer?
+
+  @@map("users")
+}
+
+// Public profiles
+model Profile {
+  id          String    @id @db.Uuid
+  updatedAt   DateTime? @map("updated_at") @db.Timestamptz
+  fullName    String?   @map("full_name")
+  companyName String?   @map("company_name")
+  avatarUrl   String?   @map("avatar_url")
+  website     String?
+  unsubscribed Boolean  @default(false)
+  user        User      @relation(fields: [id], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+// Stripe customer data
+model StripeCustomer {
+  userId           String    @id @map("user_id") @db.Uuid
+  updatedAt        DateTime? @map("updated_at") @db.Timestamptz
+  stripeCustomerId String?   @unique @map("stripe_customer_id")
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("stripe_customers")
+}
+
+// Contact requests
+model ContactRequest {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  updatedAt   DateTime? @map("updated_at") @db.Timestamptz
+  firstName   String?   @map("first_name")
+  lastName    String?   @map("last_name")
+  email       String?
+  phone       String?
+  companyName String?   @map("company_name")
+  messageBody String?   @map("message_body")
+
+  @@map("contact_requests")
+}

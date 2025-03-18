@@ -1,5 +1,6 @@
 import { Session, SupabaseClient, type AMREntry } from "@supabase/supabase-js"
 import { Database } from "./DatabaseDefinitions"
+import type { PrismaClient } from "@prisma/client"
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
@@ -15,6 +16,7 @@ declare global {
       }>
       session: Session | null
       user: User | null
+      prisma: PrismaClient
     }
     interface PageData {
       session: Session | null

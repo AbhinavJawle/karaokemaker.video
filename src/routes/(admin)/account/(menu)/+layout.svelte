@@ -71,10 +71,11 @@
       </li>
       <li>
         <a
-          href="/account"
+          href="/account/dashboard"
           class={adminSection === "home" ? "active" : ""}
           onclick={closeDrawer}
         >
+          <!-- /account revert -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -88,9 +89,10 @@
               d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
             /></svg
           >
-          Home
+          Dashboard
         </a>
       </li>
+      <li class="mt-2"></li>
       <li>
         <a
           href="/account/billing"
@@ -110,6 +112,8 @@
           Billing
         </a>
       </li>
+
+      <li class="mt-auto"></li>
       <li>
         <a
           href="/account/settings"
@@ -139,9 +143,29 @@
           Settings
         </a>
       </li>
-
-      <li class="mt-auto">
-        <a href="/account/sign_out" class="mt-auto text-base">Sign Out</a>
+      <li class="mt-2"></li>
+      <li>
+        <a
+          href="/account/sign_out"
+          class={`${adminSection === "sign_out" ? "active" : ""}`}
+          onclick={closeDrawer}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+          Sign Out
+        </a>
       </li>
     </ul>
   </div>

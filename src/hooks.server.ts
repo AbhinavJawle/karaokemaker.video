@@ -8,6 +8,7 @@ import { createServerClient } from "@supabase/ssr"
 import { createClient } from "@supabase/supabase-js"
 import type { Handle } from "@sveltejs/kit"
 import { sequence } from "@sveltejs/kit/hooks"
+import { prisma } from "$lib/prisma"
 
 export const supabase: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(
@@ -94,4 +95,15 @@ const authGuard: Handle = async ({ event, resolve }) => {
   return resolve(event)
 }
 
-export const handle: Handle = sequence(supabase, authGuard)
+// Prisma connection handling
+const prismaHandler: Handle = async ({ event, resolve }) => {
+  // Make prisma available to all server routes via event.locals
+  event.locals.prisma = prisma
+
+  // Process the request
+  const response = await resolve(event)
+
+  return response
+}
+
+export const handle: Handle = sequence(supabase, authGuard, prismaHandler)

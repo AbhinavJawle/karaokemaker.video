@@ -12,7 +12,12 @@
     "test_run": "vitest run",
     "lint": "eslint .",
     "format": "prettier --write --plugin prettier-plugin-svelte ./",
-    "format_check": "prettier --check --plugin prettier-plugin-svelte ./"
+    "format_check": "prettier --check --plugin prettier-plugin-svelte ./",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:studio": "prisma studio",
+    "db:seed": "ts-node --esm prisma/seed.ts"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
@@ -36,19 +41,24 @@
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
     "prettier-plugin-svelte": "^3.2.6",
+    "prisma": "^6.5.0",
     "super-sitemap": "^0.15.1",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
     "tailwindcss": "^4.0.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.0",
     "vite": "^6.2.0",
     "vitest": "^3.0.7"
   },
   "type": "module",
   "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/auth-ui-svelte": "^0.2.9",
     "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.45.2",
+    "@supabase/supabase-js": "^2.49.1",
     "handlebars": "^4.7.8",
     "resend": "^3.5.0",
     "stripe": "^13.3.0"
