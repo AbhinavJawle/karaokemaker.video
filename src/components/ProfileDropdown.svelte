@@ -15,17 +15,30 @@
 <div class="flex items-center justify-end">
   <div class="dropdown dropdown-end">
     <!-- Fix accessibility issue by using a button element instead of a div with tabindex -->
-    <button class="btn btn-circle btn-ghost">
+    <button class="btn btn-circle btn-soft">
       <!-- Profile Icon SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        />
       </svg>
     </button>
     <!-- Use a div instead of ul with tabindex for better accessibility -->
-    <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-2">
+    <div
+      class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 mt-2"
+    >
       <ul>
         <li>
-          <a 
+          <a
             href="/account/dashboard"
             class={adminSection === "home" ? "active" : ""}
           >
@@ -69,7 +82,12 @@
             href="/account/settings"
             class={adminSection === "settings" ? "active" : ""}
           >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+            <svg
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              fill="none"
+            >
               <g id="Interface / Settings">
                 <g id="Vector">
                   <path

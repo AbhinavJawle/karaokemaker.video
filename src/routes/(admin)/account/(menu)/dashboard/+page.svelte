@@ -64,12 +64,12 @@
   </div>
 
   <!-- Table Section -->
-  <div class="px-4 md:px-6 rounded-lg bg-color-100">
+  <div class="px-4 md:px-6 rounded-lg bg-base-300">
     <!-- Fixed height container for table -->
     <div class="h-[calc(100vh-200px)] flex flex-col">
       <!-- Table Container with scrolling -->
       <div class="flex-1 overflow-y-auto">
-        <table class="table w-full">
+        <table class="table w-full mt-4">
           <thead>
             <tr>
               <th class="text-left w-[50%]">Title</th>

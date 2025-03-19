@@ -4,7 +4,7 @@
   import { setContext } from "svelte"
   import { WebsiteName } from "../../../../config"
   import ProfileDropdown from "../../../../components/ProfileDropdown.svelte"
-  
+
   interface Props {
     children?: import("svelte").Snippet
   }
