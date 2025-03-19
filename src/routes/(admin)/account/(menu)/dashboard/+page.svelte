@@ -24,7 +24,7 @@
 
   // Pagination state
   let currentPage = 1
-  let itemsPerPage = 4
+  let itemsPerPage = 3
 
   let totalPages = Math.ceil(items.length / itemsPerPage)
 
@@ -45,7 +45,8 @@
   <!-- Header Section with Library title and Create button on same line -->
   <div class="flex justify-between items-center mb-6">
     <h1 class="text-2xl font-bold">Library</h1>
-    <button
+    <a
+      href="/account/dashboard/create"
       class="btn btn-secondary gap-2 rounded-xl"
       aria-label="Create new item"
     >
@@ -60,13 +61,13 @@
         />
       </svg>
       Create
-    </button>
+    </a>
   </div>
 
   <!-- Table Section -->
   <div class="px-4 md:px-6 rounded-lg bg-base-300">
     <!-- Fixed height container for table -->
-    <div class="h-[calc(100vh-200px)] flex flex-col">
+    <div class="h-[calc(100vh-300px)] flex flex-col">
       <!-- Table Container with scrolling -->
       <div class="flex-1 overflow-y-auto">
         <table class="table w-full mt-4">
