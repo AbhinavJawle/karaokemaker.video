@@ -9,29 +9,29 @@
 @plugin "daisyui/theme" {
   name: "saasstartertheme";
   default: true; /* set as default */
-  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
-  color-scheme: light; /* color of browser-provided UI */
+  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: dark; /* color of browser-provided UI */
 
-  --color-primary: #180042;
-  --color-primary-content: #fefbf6;
-  --color-secondary: #c7b9f8;
-  --color-secondary-content: oklch(95% 0 0);
-  --color-accent: #db2777;
-  --color-accent-content: #180042;
-  --color-neutral: #180042;
-  --color-neutral-content: #fefbf6;
-  --color-base-100: #f4edff;
-  --color-base-200: #faedd6;
-  --color-base-300: oklch(92% 0.04 240);
-  --color-base-content: #180042;
+  --color-primary: #ffffff;
+  --color-primary-content: #000000;
+  --color-secondary: #2d1b69;
+  --color-secondary-content: #ffffff;
+  --color-accent: #ff4081;
+  --color-accent-content: #ffffff;
+  --color-neutral: #2d1b69;
+  --color-neutral-content: #ffffff;
+  --color-base-100: #13111c;
+  --color-base-200: #1a1625;
+  --color-base-300: #211c2d;
+  --color-base-content: #ffffff;
   --color-info: oklch(70% 0.2 220);
-  --color-info-content: oklch(98% 0.01 220);
+  --color-info-content: #ffffff;
   --color-success: #37d399;
-  --color-success-content: oklch(98% 0.01 140);
+  --color-success-content: #ffffff;
   --color-warning: oklch(80% 0.25 80);
-  --color-warning-content: oklch(20% 0.05 80);
+  --color-warning-content: #ffffff;
   --color-error: #f77272;
-  --color-error-content: oklch(98% 0.01 30);
+  --color-error-content: #ffffff;
 
   /* border radius */
   --radius-selector: 1rem;
@@ -65,7 +65,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-gray-800, currentColor);
   }
 }
 

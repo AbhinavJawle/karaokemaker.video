@@ -48,7 +48,7 @@
     <!-- Header Section -->
     <div class="flex justify-between items-center">
       <button
-        class="btn btn-primary gap-2 rounded-xl"
+        class="btn btn-secondary gap-2 rounded-xl"
         aria-label="Create new item"
       >
         <svg
@@ -65,7 +65,7 @@
       </button>
     </div>
     <!-- Table Section -->
-    <div class="px-4 md:px-6 rounded-lg bg-slate-200">
+    <div class="px-4 md:px-6 rounded-lg bg-color-100">
       <!-- Fixed height container for table -->
       <div class="h-[calc(100vh-200px)] flex flex-col">
         <!-- Table Container with scrolling -->
@@ -134,7 +134,7 @@
 
         <!-- Pagination controls in fixed position -->
         {#if totalPages > 1}
-          <div class="border-t border-slate-300 py-4 mt-auto">
+          <div class="border-t py-4 mt-auto">
             <div class="flex justify-center gap-2">
               <button
                 class="btn btn-ghost btn-sm"
@@ -150,7 +150,7 @@
               >
                 ‹
               </button>
-              <button class="btn btn-primary btn-sm">
+              <button class="btn btn-secondary btn-sm">
                 {currentPage}
               </button>
               <button
